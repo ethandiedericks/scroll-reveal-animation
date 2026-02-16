@@ -55,7 +55,3 @@ Claude will copy the animation components into your project and wrap your UI ele
 | `SKILL.md` | Skill definition with workflow and usage patterns |
 | `assets/animations.tsx` | Animation components copied into user projects |
 | `references/REFERENCE.md` | Detailed props tables and customization guide |
-
-## License
-
-MIT
