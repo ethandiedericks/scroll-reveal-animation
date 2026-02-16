@@ -99,13 +99,21 @@ interface AnimatedItemProps {
   children: ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  as?: "div" | "li";
 }
 
-export function AnimatedItem({ children, className = "", style }: AnimatedItemProps) {
+export function AnimatedItem({
+  children,
+  className = "",
+  style,
+  as = "div",
+}: AnimatedItemProps) {
+  const Component = motion[as];
+
   return (
-    <motion.div variants={childVariants} className={className} style={style}>
+    <Component variants={childVariants} className={className} style={style}>
       {children}
-    </motion.div>
+    </Component>
   );
 }
 
@@ -113,16 +121,18 @@ export function AnimatedItem({ children, className = "", style }: AnimatedItemPr
 export function AnimatedText({
   children,
   className = "",
+  style,
   as = "p",
 }: {
   children: ReactNode;
   className?: string;
-  as?: "p" | "h1" | "h2" | "h3" | "span";
+  style?: React.CSSProperties;
+  as?: "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span";
 }) {
   const Component = motion[as];
 
   return (
-    <Component variants={childVariants} className={className}>
+    <Component variants={childVariants} className={className} style={style}>
       {children}
     </Component>
   );
