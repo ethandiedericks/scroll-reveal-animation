@@ -18,7 +18,7 @@ All animations trigger once when the element scrolls into view, with a smooth de
 Add this skill to Claude Code:
 
 ```bash
-claude install-skill ethandiedericks/scroll-reveal-animation
+npx skills add https://github.com/ethandiedericks/scroll-reveal-animation
 ```
 
 ### Requirements
